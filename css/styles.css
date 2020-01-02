@@ -1,0 +1,118 @@
+* {
+  font-family: pragmatica, sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  color: black;
+  text-decoration: none;
+}
+
+html {
+  overflow-y: hidden;
+  overflow-x: scroll;
+  background: #c9c9c9;
+}
+
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000;
+}
+
+::-webkit-scrollbar-track {
+  background: #c9c9c9;
+  border-top: 2px solid black;
+}
+
+#header {
+  z-index: 100;
+  background: #c9c9c9;
+  width: calc(100vh - 14px);
+  height: 80px;
+  position: fixed;
+  top: calc(100vh - 14px);
+  left: 0;
+  border-bottom: 2px solid black;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 40px;
+}
+
+#header .logo {
+  font-size: 30px;
+}
+
+#header ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 160px;
+}
+
+#header ul a {
+  font-size: 20px;
+}
+
+#pageWrap {
+  height: calc(100vh - 14px - 80px);
+  width: auto;
+  margin: 40px 0 40px 120px;
+}
+
+#pageWrap h1 {
+  position: absolute;
+  font-size: 12vh;
+  width: calc(100vh - 14px - 80px);
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  top: calc(100vh - 14px - 40px);
+  padding: 40px 0;
+  line-height: 1;
+}
+
+#pageWrap #projects {
+  height: calc(100vh - 14px - 80px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-left: calc(24vh + 120px);
+}
+
+#pageWrap #projects img {
+  height: 100%;
+  width: auto;
+  padding-right: 40px;
+}
+/*# sourceMappingURL=styles.css.map */

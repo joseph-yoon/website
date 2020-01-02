@@ -1,0 +1,81 @@
+$gray: #c9c9c9;
+$height: calc(100vh - 14px - 80px);
+* {
+    font-family: pragmatica, sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    color: black;
+    text-decoration: none;
+}
+html {
+    overflow-y: hidden;
+    overflow-x: scroll;
+    background: $gray;
+}
+::-webkit-scrollbar {
+    width: 14px;
+}
+::-webkit-scrollbar-thumb {
+    background: #000;
+}
+::-webkit-scrollbar-track {
+    background: $gray;
+    border-top: 2px solid black;
+}
+#header {
+    z-index: 100;
+    background: $gray;
+    width: calc(100vh - 14px);
+    height: 80px;
+    position: fixed;
+    top: calc(100vh - 14px);
+    left: 0;
+    border-bottom: 2px solid black;
+    transform: rotate(-90deg);
+    transform-origin: top left;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 40px;
+    .logo {
+        font-size: 30px;
+    }
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 160px;
+        a {
+            font-size: 20px;
+        }
+    }
+}
+#pageWrap {
+    height: $height;
+    width: auto;
+    margin: 40px 0 40px 120px;
+    h1 {
+        position: absolute;
+        font-size: 12vh;
+        width: $height;
+        transform: rotate(-90deg);
+        transform-origin: top left;
+        top: calc(100vh - 14px - 40px);
+        padding: 40px 0;
+        line-height: 1;
+    }
+    #projects {
+        height: $height;
+        display: flex;
+        flex-direction: row;
+        margin-left: calc(24vh + 120px);
+        img {
+            height: 100%;
+            width: auto;
+            padding-right: 40px;
+        }
+    }
+}
