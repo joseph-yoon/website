@@ -12,10 +12,6 @@ html {
   overflow: hidden;
 }
 
-body {
-  overflow: hidden;
-}
-
 ::-webkit-scrollbar {
   width: 14px;
 }
@@ -161,40 +157,16 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition-delay: .4s;
-          transition-delay: .4s;
+  -webkit-transition-delay: .5s;
+          transition-delay: .5s;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
 }
 
 #preload p {
   font-size: 2em;
-  -webkit-transition-duration: .5s;
-          transition-duration: .5s;
-  -webkit-animation: pulse 3s ease-in-out infinite;
-          animation: pulse 3s ease-in-out infinite;
-}
-
-@-webkit-keyframes pulse {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: .5;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes pulse {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: .5;
-  }
-  100% {
-    opacity: 1;
-  }
+  -webkit-transition-duration: .75s;
+          transition-duration: .75s;
 }
 
 @media screen and (max-width: 1200px) {

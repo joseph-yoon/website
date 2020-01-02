@@ -51,7 +51,13 @@
     <div id="cursorFollower"></div>
     <div id="cursor"></div>
     <footer>© 2020 Joseph Yoon  —  Designed by <a href="https://jacobyoon.cf/" target="none">Jacob Yoon</a></footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="js/script.js"></script>
+    <script language="javascript" type="text/javascript">
+        $(window).load(function() {
+            document.getElementById('p').style.opacity = "0";
+            document.getElementById('preload').style.top = "-100vh";
+        });
+    </script>
 </body>
 </html>

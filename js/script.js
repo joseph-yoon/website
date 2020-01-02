@@ -41,28 +41,3 @@ function cursor() {
     _cursorFollower.style.top = getY(event) - offset + "px";
     _cursorFollower.style.left = getX(event) - offset + "px";
 }
-
-window.onload = function load() {
-}
-
-function onReady(callback) {
-    var intervalID = window.setInterval(checkReady, 1000);
-
-    function checkReady() {
-        if (document.getElementsByTagName('body')[0] !== undefined) {
-            window.clearInterval(intervalID);
-            callback.call(this);
-        }
-    }
-}
-
-function show(id, value) {
-    document.getElementById(id).style.display = value ? 'block' : 'none';
-}
-
-onReady(function () {
-    document.getElementById('p').style.opacity = "0";
-    document.getElementById('preload').style.top = "-100vh";
-    show('wrap', true);
-    document.body.style.overflow = 'visible';
-});

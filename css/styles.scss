@@ -13,7 +13,6 @@ html {
     overflow: hidden;
 }
 body {
-    overflow: hidden;
 }
 ::-webkit-scrollbar {
     width: 14px;
@@ -119,16 +118,11 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition-delay: .4s;
+    transition-delay: .5s;
+    transition-timing-function: ease-in-out;
     p {
         font-size: 2em;
-        transition-duration: .5s;
-        animation: pulse 3s ease-in-out infinite;
-    }
-    @keyframes pulse {
-        0% { opacity: 1; }
-        50% { opacity: .5; }
-        100% { opacity: 1; }
+        transition-duration: .75s;
     }
 }
 @media screen and (max-width: 1200px) {
