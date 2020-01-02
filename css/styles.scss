@@ -1,90 +1,117 @@
-@media screen and (min-width: 800px) {
-    $gray: #c9c9c9;
-    * {
-        font-family: pragmatica, sans-serif;
-        font-weight: 400;
-        margin: 0;
-        padding: 0;
-        color: black;
-        text-decoration: none;
+$text: #fff;
+$bg: #151515;
+* {
+    font-family: 'nimbus-sans', sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    color: $text;
+    text-decoration: none;
+}
+html {
+    background: #151515;
+    overflow: hidden;
+}
+body {
+}
+::-webkit-scrollbar {
+    width: 14px;
+}
+::-webkit-scrollbar-thumb {
+    background: $text;
+}
+::-webkit-scrollbar-track {
+    background: $bg;
+}
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: $bg;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    box-sizing: border-box;
+    .logo {
+        font-size: 30px;
     }
-    html {
-        background: $gray;
-        overflow-y: hidden;
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 160px;
+        a {
+            font-size: 20px;
+        }
     }
-    body {
+}
+#pageWrap {
+    overflow-y: auto;
+    width: 100%;
+    height: calc(100vh - 80px);
+    padding: 0 40px 40px 40px;
+    box-sizing: border-box;
+    margin-top: 80px;
+    scroll-behavior: smooth;
+    h1 {
+        font-size: 9em;
+        text-align: center;
+        padding: 120px 0;
+        text-transform: uppercase;
     }
-    ::-webkit-scrollbar {
-        width: 14px;
+    #projects {
+        display: inline-block;
+        column-count: 4;
+        column-gap: 40px;
+        img {
+            width: 100%;
+            padding-bottom: 40px;
+        }
     }
-    ::-webkit-scrollbar-thumb {
-        background: #000;
+}
+
+@media screen and (max-width: 1200px) {
+    #pageWrap {
+        h1 {
+            font-size: 7em;
+        }
+        #projects {
+            column-count: 3;
+        }
     }
-    ::-webkit-scrollbar-track {
-        background: $gray;
+}
+@media screen and (max-width: 900px) {
+    #pageWrap {
+        h1 {
+            font-size: 5em;
+        }
+        #projects {
+            column-count: 2;
+        }
     }
-    #wrap {
-        height: 100vw;
-        width: 100vh;
-        transform-origin: top left;
-        transform: rotate(-90deg) translateX(-100vh);
-        #header {
-            z-index: 100;
-            width: 100vh;
-            height: 80px;
-            background: $gray;
-            border-bottom: 2px solid black;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 40px;
-            box-sizing: border-box;
-            .logo {
-                font-size: 30px;
-            }
-            ul {
-                width: 160px;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                a {
-                    font-size: 20px;
-                }
+}
+@media screen and (max-width: 650px) {
+    #header {
+        .logo {
+            font-size: 26px;
+        }
+        ul {
+            width: 120px;
+            a {
+                font-size: 16px;
             }
         }
-        #pageWrap {
-            overflow-y: auto;
-            //overflow-x: hidden;
-            width: 100vh;
-            height: calc(100% - 80px);
-            position: absolute;
-            top: 80px;
-            left: 0;
-            padding: 40px;
-            box-sizing: border-box;
-            h1 {
-                font-size: 12vh;
-                line-height: 1;
-                padding: 40px 0 120px 0;
-            }
-            #projects {
-                display: flex;
-                flex-direction: row;
-                margin-top: 40px;
-                justify-content: flex-start;
-                align-items: center;
-                height: calc(100vh - 80px);
-                width: auto;
-                transform: rotate(90deg) translateX(-100vh);
-                transform-origin: bottom left;
-                margin-right: 100px;
-                & > img {
-                    height: calc(100vh - 80px);
-                    width: auto;
-                    padding-right: 40px;
-                }
-            }
+    }
+    #pageWrap {
+        h1 {
+            font-size: 4.5em;
+        }
+        #projects {
+            column-count: 1;
         }
     }
 }
