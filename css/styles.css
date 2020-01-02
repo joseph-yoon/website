@@ -9,11 +9,7 @@
 
 html {
   background: #c9c9c9;
-  overflow: hidden;
-}
-
-body {
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -28,19 +24,20 @@ body {
   background: #c9c9c9;
 }
 
-#header {
-  z-index: 100;
-  background: #c9c9c9;
+#wrap {
+  height: 100vw;
   width: 100vh;
-  height: 80px;
-  position: fixed;
-  top: 100vh;
-  left: 0;
-  border-bottom: 2px solid black;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
   -webkit-transform-origin: top left;
           transform-origin: top left;
+  -webkit-transform: rotate(-90deg) translateX(-100vh);
+          transform: rotate(-90deg) translateX(-100vh);
+}
+
+#wrap #header {
+  width: 100vh;
+  height: 80px;
+  background: #c9c9c9;
+  border-bottom: 2px solid black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -54,16 +51,17 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 0 40px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 0 40px;
 }
 
-#header .logo {
+#wrap #header .logo {
   font-size: 30px;
 }
 
-#header ul {
+#wrap #header ul {
+  width: 160px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -74,60 +72,31 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 160px;
 }
 
-#header ul a {
+#wrap #header ul a {
   font-size: 20px;
 }
 
-#pageWrap {
-  height: calc(100vw - 80px);
-  width: 100vh;
+#wrap #pageWrap {
   overflow-y: auto;
-  overflow-x: hidden;
-  -webkit-transform: rotate(-90deg) translateX(-100vh) translateY(80px);
-          transform: rotate(-90deg) translateX(-100vh) translateY(80px);
-  -webkit-transform-origin: left top;
-          transform-origin: left top;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-#pageWrap #content {
-  height: 100vh;
-  -webkit-transform: rotate(90deg) translateY(-100vh);
-          transform: rotate(90deg) translateY(-100vh);
-  -webkit-transform-origin: left top;
-          transform-origin: left top;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  width: 100vh;
+  height: calc(100% - 80px);
+  position: absolute;
+  top: 80px;
+  left: 0;
   padding: 40px;
-  width: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-#pageWrap #content h1 {
+#wrap #pageWrap h1 {
   font-size: 12vh;
   line-height: 1;
-  width: calc(100vh - 80px);
-  height: 24vh;
-  position: absolute;
-  -webkit-transform: rotate(-90deg) translateX(calc(-100vh + 80px));
-          transform: rotate(-90deg) translateX(calc(-100vh + 80px));
-  -webkit-transform-origin: left top;
-          transform-origin: left top;
-  padding-top: 40px;
+  padding: 40px 0 120px 0;
 }
 
-#pageWrap #content #projects {
-  height: 100%;
+#wrap #pageWrap #projects {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -135,11 +104,24 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-left: calc(120px + 24vh);
+  margin-top: 40px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: calc(100vh - 80px);
+  width: auto;
+  -webkit-transform: rotate(90deg) translateX(-100vh);
+          transform: rotate(90deg) translateX(-100vh);
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+  margin-right: 100px;
 }
 
-#pageWrap #content #projects img {
-  height: 100%;
+#wrap #pageWrap #projects > img {
+  height: calc(100vh - 80px);
   width: auto;
   margin-right: 40px;
 }

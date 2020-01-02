@@ -9,10 +9,9 @@ $gray: #c9c9c9;
 }
 html {
     background: $gray;
-    overflow: hidden;
+    overflow-y: hidden;
 }
 body {
-    overflow: hidden;
 }
 ::-webkit-scrollbar {
     width: 14px;
@@ -23,74 +22,66 @@ body {
 ::-webkit-scrollbar-track {
     background: $gray;
 }
-#header {
-    z-index: 100;
-    background: $gray;
+#wrap {
+    height: 100vw;
     width: 100vh;
-    height: 80px;
-    position: fixed;
-    top: 100vh;
-    left: 0;
-    border-bottom: 2px solid black;
-    transform: rotate(-90deg);
     transform-origin: top left;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 0 40px;
-    .logo {
-        font-size: 30px;
-    }
-    ul {
+    transform: rotate(-90deg) translateX(-100vh);
+    #header {
+        width: 100vh;
+        height: 80px;
+        background: $gray;
+        border-bottom: 2px solid black;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        width: 160px;
-        a {
-            font-size: 20px;
+        align-items: center;
+        padding: 0 40px;
+        box-sizing: border-box;
+        .logo {
+            font-size: 30px;
+        }
+        ul {
+            width: 160px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            a {
+                font-size: 20px;
+            }
         }
     }
-}
-#pageWrap {
-    height: calc(100vw - 80px);
-    width: 100vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    transform: rotate(-90deg) translateX(-100vh) translateY(80px);
-    transform-origin: left top;
-    box-sizing: border-box;
-    #content {
-        height: 100vh;
-        transform: rotate(90deg) translateY(-100vh);
-        transform-origin: left top;
-        display: flex;
-        flex-direction: row;
-        box-sizing: border-box;
+    #pageWrap {
+        overflow-y: auto;
+        //overflow-x: hidden;
+        width: 100vh;
+        height: calc(100% - 80px);
+        position: absolute;
+        top: 80px;
+        left: 0;
         padding: 40px;
-        width: auto;
+        box-sizing: border-box;
         h1 {
             font-size: 12vh;
             line-height: 1;
-            width: calc(100vh - 80px);
-            height: 24vh;
-            position: absolute;
-            transform: rotate(-90deg) translateX(calc(-100vh + 80px));
-            transform-origin: left top;
-            padding-top: 40px;
+            padding: 40px 0 120px 0;
         }
         #projects {
-            height: 100%;
             display: flex;
             flex-direction: row;
-            margin-left: calc(120px + 24vh);
-            img {
-                height: 100%;
+            margin-top: 40px;
+            justify-content: flex-start;
+            align-items: center;
+            height: calc(100vh - 80px);
+            width: auto;
+            transform: rotate(90deg) translateX(-100vh);
+            transform-origin: bottom left;
+            margin-right: 100px;
+            & > img {
+                height: calc(100vh - 80px);
                 width: auto;
                 margin-right: 40px;
             }
         }
-
     }
 }
