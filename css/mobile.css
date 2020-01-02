@@ -1,4 +1,4 @@
-@media screen and (min-width: 800px) {
+@media screen and (max-width: 799.99px) {
   * {
     font-family: pragmatica, sans-serif;
     font-weight: 400;
@@ -9,7 +9,10 @@
   }
   html {
     background: #c9c9c9;
-    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+  body {
+    overflow-x: hidden;
   }
   ::-webkit-scrollbar {
     width: 14px;
@@ -21,18 +24,13 @@
     background: #c9c9c9;
   }
   #wrap {
-    height: 100vw;
-    width: 100vh;
-    -webkit-transform-origin: top left;
-            transform-origin: top left;
-    -webkit-transform: rotate(-90deg) translateX(-100vh);
-            transform: rotate(-90deg) translateX(-100vh);
+    width: 100vw;
   }
   #wrap #header {
-    z-index: 100;
-    width: 100vh;
+    width: 100vw;
     height: 80px;
     background: #c9c9c9;
+    z-index: 100;
     border-bottom: 2px solid black;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -50,6 +48,7 @@
     padding: 0 40px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
+    position: fixed;
   }
   #wrap #header .logo {
     font-size: 30px;
@@ -71,11 +70,7 @@
     font-size: 20px;
   }
   #wrap #pageWrap {
-    overflow-y: auto;
-    width: 100vh;
-    height: calc(100% - 80px);
-    position: absolute;
-    top: 80px;
+    width: 100vw;
     left: 0;
     padding: 40px;
     -webkit-box-sizing: border-box;
@@ -84,16 +79,16 @@
   #wrap #pageWrap h1 {
     font-size: 12vh;
     line-height: 1;
-    padding: 40px 0 120px 0;
+    padding: 120px 0 40px 0;
   }
   #wrap #pageWrap #projects {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
+    -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+        -ms-flex-direction: column;
+            flex-direction: column;
     margin-top: 40px;
     -webkit-box-pack: start;
         -ms-flex-pack: start;
@@ -101,18 +96,12 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    height: calc(100vh - 80px);
-    width: auto;
-    -webkit-transform: rotate(90deg) translateX(-100vh);
-            transform: rotate(90deg) translateX(-100vh);
-    -webkit-transform-origin: bottom left;
-            transform-origin: bottom left;
-    margin-right: 100px;
+    width: 100%;
   }
   #wrap #pageWrap #projects > img {
-    height: calc(100vh - 80px);
-    width: auto;
-    padding-right: 40px;
+    width: calc(100vw - 80px);
+    height: auto;
+    padding-bottom: 40px;
   }
 }
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=mobile.css.map */
