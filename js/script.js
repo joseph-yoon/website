@@ -37,17 +37,20 @@ var halfWidth = window.innerWidth / 2;
 var halfHeight = window.innerHeight / 2;
 
 function cursor() {
-    var midX = (getX(event) - halfWidth) * -.8;
-    var midY = (getY(event) - halfHeight) * -.8;
-    _cursor.style.top = getY(event) - 20 + "px";
-	_cursor.style.left = getX(event) - 20 + "px";
-    _cursorFollower.style.top = getY(event) - offset + "px";
-    _cursorFollower.style.left = getX(event) - offset + "px";
-    $('#projects').css('transform', 'translateX(' + midX + 'px) translateY(' + midY + 'px)');
+    if (window.innerWidth > 1000) {
+        var midX = (getX(event) - halfWidth) * -.8;
+        var midY = (getY(event) - halfHeight) * -.8;
+        _cursor.style.top = getY(event) - 20 + "px";
+        _cursor.style.left = getX(event) - 20 + "px";
+        _cursorFollower.style.top = getY(event) - offset + "px";
+        _cursorFollower.style.left = getX(event) - offset + "px";
+        $('#projects').css('transform', 'translateX(' + midX + 'px) translateY(' + midY + 'px)');
+    }
 }
 
 $win.on('scroll', function(){
-    if ($win.scrollTop() < window.innerHeight && window.innerHeight < 1000) {
+    console.log(window.innerWidth);
+    if ($win.scrollTop() < window.innerHeight && window.innerWidth > 1000) {
         $('#image').css('margin-top', parseInt($win.scrollTop()/2.5, 10) + 'px');
     }
 });
