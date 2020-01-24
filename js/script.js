@@ -49,7 +49,7 @@ function cursor() {
 
 $win.on('scroll', function(){
     if ($win.scrollTop() < window.innerHeight) {
-        $('#image').css('margin-top', $win.scrollTop()/2.5 + 'px');
+        $('#image').css('margin-top', parseInt($win.scrollTop()/2.5, 10) + 'px');
         console.log($win.scrollTop());
     }
 });

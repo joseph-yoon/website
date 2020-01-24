@@ -51,6 +51,63 @@ html {
           backdrop-filter: invert(1);
 }
 
+#preload {
+  position: fixed;
+  z-index: 9;
+  background: white;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+  -webkit-transition-duration: 1.5s;
+          transition-duration: 1.5s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  pointer-events: none;
+}
+
+#preload #p {
+  height: 100px;
+  width: 100px;
+  border: 2px solid white;
+  border-top: 2px solid black;
+  border-radius: 50%;
+  -webkit-animation: spin 1.5s linear infinite;
+          animation: spin 1.5s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 ::-webkit-scrollbar {
   width: 14px;
 }
@@ -131,8 +188,8 @@ html {
   height: 150vh;
   width: 150vw;
   position: absolute;
-  -webkit-transition-duration: .6s;
-          transition-duration: .6s;
+  -webkit-transition-duration: .75s;
+          transition-duration: .75s;
   -webkit-transition-timing-function: ease-out;
           transition-timing-function: ease-out;
   display: -ms-grid;
@@ -197,10 +254,12 @@ html {
   height: 70vw;
   width: calc(100% - 200px);
   z-index: -1;
-  background-image: url("../img/joseph.jpg");
+  background-image: url("../img/joseph-min.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
 }
 
 #about #footer {

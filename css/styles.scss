@@ -40,6 +40,34 @@ body {
         backdrop-filter: invert(1);
     }
 }
+#preload {
+    position: fixed;
+    z-index: 9;
+    background: white;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    transition-delay: 1s;
+    transition-duration: 1.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    pointer-events: none;
+    #p {
+        height: 100px;
+        width: 100px;
+        border: 2px solid white;
+        border-top: 2px solid black;
+        border-radius: 50%;
+        animation: spin 1.5s linear infinite;
+    }
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+}
 ::-webkit-scrollbar {
     width: 14px;
 }
@@ -88,7 +116,7 @@ body {
         width: 150vw;
         position: absolute;
         //border: 2px solid black;
-        transition-duration: .6s;
+        transition-duration: .75s;
         transition-timing-function: ease-out;
         display: grid;
         grid-template-columns: 20% 20% 20% 20% 20%;
@@ -131,10 +159,12 @@ body {
         height: 70vw;
         width: calc(100% - 200px);
         z-index: -1;
-        background-image: url('../img/joseph.jpg');
+        background-image: url('../img/joseph-min.jpg');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
+        //transition-duration: .01s;
+        transition-timing-function: ease-out;
     }
     #footer {
         margin-top: 100px;
