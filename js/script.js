@@ -37,8 +37,8 @@ var halfWidth = window.innerWidth / 2;
 var halfHeight = window.innerHeight / 2;
 
 function cursor() {
-    var midX = (getX(event) - halfWidth) * -1;
-    var midY = (getY(event) - halfHeight) * -1;
+    var midX = (getX(event) - halfWidth) * -.8;
+    var midY = (getY(event) - halfHeight) * -.8;
     _cursor.style.top = getY(event) - 20 + "px";
 	_cursor.style.left = getX(event) - 20 + "px";
     _cursorFollower.style.top = getY(event) - offset + "px";
@@ -46,3 +46,10 @@ function cursor() {
     $('#projects').css('transform', 'translateX(' + midX + 'px) translateY(' + midY + 'px)');
     console.log(midX + ',' + midY);
 }
+
+$win.on('scroll', function(){
+    if ($win.scrollTop() < window.innerHeight) {
+        $('#image').css('margin-top', $win.scrollTop()/2.5 + 'px');
+        console.log($win.scrollTop());
+    }
+});

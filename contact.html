@@ -4,26 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Contact | Joseph Yoon</title>
+    <title>Joseph Yoon</title>
+    <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="https://use.typekit.net/tdd5rjb.css">
 </head>
 <body>
     <div id="header">
         <a href="index.html" class="logo">Joseph Yoon</a>
-        <ul>
+        <div id="links">
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
-        </ul>
+        </div>
     </div>
-    <div id="pageWrap">
-        <h1 id="home">Contact</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut etiam sit amet nisl. Ut placerat orci nulla pellentesque dignissim enim sit amet. Elit at imperdiet dui accumsan. Magna eget est lorem ipsum dolor sit. Mattis enim ut tellus elementum sagittis vitae et leo. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin. Ipsum a arcu cursus vitae congue mauris rhoncus aenean.</p>
-        <footer>© 2020 Joseph Yoon  —  Designed by <a href="https://jacobyoon.cf/" target="none">Jacob Yoon</a></footer>
+    <div id="about">
+        <p id="desc"><a href="index.html">Joseph Yoon</a>  is an avid artist and photographer based in Ithaca, NY. He currently attends Cornell University and has ambitious creative plans for the future.</p>
+        <div id="image"></div>
+        <div id="footer">© Joseph Yoon 2020</div>
     </div>
+    <div id="preload"><p id="p"></p></div>
     <div id="cursorFollower"></div>
-    <div id="cursor"></div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <div id="cursor">
+        <div class="a"></div>
+        <div class="b"></div>
+        <span class=""></span>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="js/script.js"></script>
+    <script language="javascript" type="text/javascript">
+        $(window).load(function() {
+            document.getElementById('p').style.opacity = "0";
+            document.getElementById('preload').style.top = "-100vh";
+        });
+    </script>
 </body>
 </html>
