@@ -44,12 +44,10 @@ function cursor() {
     _cursorFollower.style.top = getY(event) - offset + "px";
     _cursorFollower.style.left = getX(event) - offset + "px";
     $('#projects').css('transform', 'translateX(' + midX + 'px) translateY(' + midY + 'px)');
-    console.log(midX + ',' + midY);
 }
 
 $win.on('scroll', function(){
-    if ($win.scrollTop() < window.innerHeight) {
+    if ($win.scrollTop() < window.innerHeight && window.innerHeight < 1000) {
         $('#image').css('margin-top', parseInt($win.scrollTop()/2.5, 10) + 'px');
-        console.log($win.scrollTop());
     }
 });

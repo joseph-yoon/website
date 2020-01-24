@@ -1,1 +1,221 @@
-/* No CSS *//*# sourceMappingURL=mobile.css.map */
+@media screen and (max-width: 999.99px) {
+  html {
+    background: white;
+    overflow-y: scroll;
+  }
+  #cursor {
+    display: none;
+  }
+  #preload {
+    position: fixed;
+    z-index: 99;
+    background: white;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    -webkit-transition-duration: 1.5s;
+            transition-duration: 1.5s;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    pointer-events: none;
+  }
+  #preload #p {
+    height: 100px;
+    width: 100px;
+    border: 2px solid white;
+    border-top: 2px solid black;
+    border-radius: 50%;
+    -webkit-animation: spin 1.5s linear infinite;
+            animation: spin 1.5s linear infinite;
+  }
+  @-webkit-keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  @keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  #header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 101;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 60px;
+    width: 100vw;
+    font-size: 18px;
+    padding: 0 25px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.5);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+  }
+  #header #links {
+    width: 180px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  #header a {
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+    -webkit-transition-duration: .3s;
+            transition-duration: .3s;
+  }
+  #header a:hover {
+    border-bottom: 2px solid black;
+  }
+  #pageWrap {
+    height: 100vh;
+    width: 100vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  #pageWrap #projects {
+    width: 100vw;
+    position: absolute;
+    -webkit-transition-duration: .75s;
+            transition-duration: .75s;
+    -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #pageWrap #projects .x {
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #pageWrap #projects .x img {
+    width: auto;
+    max-width: 100vw;
+    max-height: 100vh;
+  }
+  .scroll {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
+    font-size: 18px;
+  }
+  #about {
+    padding: 100px 25px 0 25px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #about #desc {
+    font-size: 34px;
+    line-height: 1.15;
+    color: black;
+    margin-bottom: 60px;
+  }
+  #about #desc a {
+    color: black;
+    -webkit-transition-duration: .3s;
+            transition-duration: .3s;
+    border-bottom: 4px solid white;
+  }
+  #about #desc a:hover {
+    border-bottom: 4px solid #333;
+  }
+  #about #image {
+    width: 100%;
+    height: 80vw;
+    z-index: -1;
+    background-image: url("../img/joseph-min.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+  }
+  #about #footer {
+    margin-top: 60px;
+    text-align: center;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.75);
+    line-height: 1.25;
+    height: 40px;
+  }
+}
+/*# sourceMappingURL=mobile.css.map */
