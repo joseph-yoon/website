@@ -1,18 +1,44 @@
 $text: LightGrey;
 $bg: rgb(20, 20, 20);
 * {
-    font-family: 'pragmatica', sans-serif;
+    font-family: Styrene B, serif;
     font-weight: 400;
     margin: 0;
     padding: 0;
-    color: $text;
+    color: black;
     text-decoration: none;
+    cursor: none;
+    letter-spacing: -.02em;
 }
 html {
-    background: #151515;
+    background: white;
     overflow: hidden;
 }
 body {
+}
+#cursor {
+    position: fixed;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 11;
+    pointer-events: none    ;
+    div {
+        backdrop-filter: invert(1);
+        height: 2px;
+        width: 40px;
+        position: absolute;
+    }
+    .a {
+        transform: rotate(90deg);
+    }
+    span {
+        height: 2px;
+        width: 2px;
+        backdrop-filter: invert(1);
+    }
 }
 ::-webkit-scrollbar {
     width: 14px;
@@ -23,149 +49,76 @@ body {
 ::-webkit-scrollbar-track {
     background: $bg;
 }
-/**#cursor {
-    z-index: 1000;
-    position: fixed;
-    height: 20px;
-    width: 20px;
-    background: $text;
-    border-radius: 50%;
-    pointer-events: none;
-}
-#cursorFollower {
-    z-index: 900;
-    position: fixed;
-    height: 100px;
-    width: 100px;
-    background: $bg;
-    border-radius: 50%;
-    pointer-events: none;
-    transition-duration: 1s;
-    transition-timing-function: cubic-bezier(.08,.35,.16,1.02);
-}*/
 #header {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 100;
-    width: 100%;
-    height: 80px;
+    z-index: 10;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0 40px;
+    height: 60px;
+    width: 100%;
+    font-size: 20px;
+    padding: 0 25px;
     box-sizing: border-box;
-    .logo {
-        font-size: 30px;
-    }
-    ul {
+    #links {
+        width: 180px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        width: 160px;
-        a {
-            font-size: 20px;
-        }
+    }
+    a {
+        border-bottom: 2px solid rgba(0,0,0,0);
+        transition-duration: .3s;
+    }
+    a:hover {
+        border-bottom: 2px solid black;
     }
 }
 #pageWrap {
-    width: 100%;
-    height: calc(100vh - 80px);
-    padding: 0 40px 0 40px;
-    box-sizing: border-box;
-    overflow-y: auto;
-    scroll-behavior: smooth;
-    margin-top: 80px;
-    h1 {
-        font-size: 9em;
-        text-align: center;
-        padding: 120px 0;
-        text-transform: uppercase;
-    }
-    #projects {
-        display: inline-block;
-        column-count: 4;
-        column-gap: 40px;
-        img {
-            width: 100%;
-            padding-bottom: 40px;
-        }
-    }
-    p {
-        font-size: 4em;
-        line-height: 1.25;
-        padding-bottom: 120px;
-    }
-}
-footer {
-    width: 100%;
-    text-align: center;
-    font-size: 16px;
-    opacity: .4;
-    padding: 14px 0;
-}
-#preload {
-    position: fixed;
     height: 100vh;
     width: 100vw;
-    z-index: 101;
-    background: $bg;
-    transition-duration: 2s;
-    top: 0;
-    left: 0;
-    transform-origin: top;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition-delay: .5s;
-    transition-timing-function: ease-in-out;
-    p {
-        font-size: 2em;
-        transition-duration: .75s;
-    }
-}
-@media screen and (max-width: 1200px) {
-    #pageWrap {
-        h1 {
-            font-size: 7em;
-        }
-        #projects {
-            column-count: 3;
-        }
-    }
-}
-@media screen and (max-width: 900px) {
-    #pageWrap {
-        h1 {
-            font-size: 5em;
-        }
-        #projects {
-            column-count: 2;
-        }
-    }
-}
-@media screen and (max-width: 650px) {
-    ::-webkit-scrollbar {
-        display: none;
-    }
-    #header {
-        .logo {
-            font-size: 26px;
-        }
-        ul {
-            width: 120px;
-            a {
-                font-size: 16px;
+    #projects {
+        height: 170vh;
+        width: 170vw;
+        position: absolute;
+        //border: 2px solid black;
+        transition-duration: .6s;
+        transition-timing-function: ease-out;
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+        grid-template-rows: 33% 33% 33%;
+        img {
+            height: 24vw;
+            transform-origin: center;
+            transition-duration: .5s;
+            transition-timing-function: ease-out;
+            align-self: center;
+            justify-self: center;
+            &:hover {
+            //    transform: scale(1.5);
             }
         }
     }
-    #pageWrap {
-        h1 {
-            font-size: 4.5em;
-        }
-        #projects {
-            column-count: 1;
+}
+#about {
+    margin: 60px 25px;
+    #desc {
+        font-size: 6vw;
+        line-height: 1.15;
+        color: #333;
+        a {
+            color: #333;
+            transition-duration: .3s;
+            border-bottom: 4px solid white;
+            &:hover {
+                border-bottom: 4px solid #333;
+            }
         }
     }
 }

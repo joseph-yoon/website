@@ -1,15 +1,54 @@
 * {
-  font-family: 'pragmatica', sans-serif;
+  font-family: Styrene B, serif;
   font-weight: 400;
   margin: 0;
   padding: 0;
-  color: LightGrey;
+  color: black;
   text-decoration: none;
+  cursor: none;
+  letter-spacing: -.02em;
 }
 
 html {
-  background: #151515;
+  background: white;
   overflow: hidden;
+}
+
+#cursor {
+  position: fixed;
+  height: 40px;
+  width: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 11;
+  pointer-events: none;
+}
+
+#cursor div {
+  -webkit-backdrop-filter: invert(1);
+          backdrop-filter: invert(1);
+  height: 2px;
+  width: 40px;
+  position: absolute;
+}
+
+#cursor .a {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+#cursor span {
+  height: 2px;
+  width: 2px;
+  -webkit-backdrop-filter: invert(1);
+          backdrop-filter: invert(1);
 }
 
 ::-webkit-scrollbar {
@@ -24,33 +63,11 @@ html {
   background: #141414;
 }
 
-/**#cursor {
-    z-index: 1000;
-    position: fixed;
-    height: 20px;
-    width: 20px;
-    background: $text;
-    border-radius: 50%;
-    pointer-events: none;
-}
-#cursorFollower {
-    z-index: 900;
-    position: fixed;
-    height: 100px;
-    width: 100px;
-    background: $bg;
-    border-radius: 50%;
-    pointer-events: none;
-    transition-duration: 1s;
-    transition-timing-function: cubic-bezier(.08,.35,.16,1.02);
-}*/
 #header {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
-  width: 100%;
-  height: 80px;
+  z-index: 10;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -64,16 +81,16 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 40px;
+  height: 60px;
+  width: 100%;
+  font-size: 20px;
+  padding: 0 25px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-#header .logo {
-  font-size: 30px;
-}
-
-#header ul {
+#header #links {
+  width: 180px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -84,70 +101,21 @@ html {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 160px;
 }
 
-#header ul a {
-  font-size: 20px;
+#header a {
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
+}
+
+#header a:hover {
+  border-bottom: 2px solid black;
 }
 
 #pageWrap {
-  width: 100%;
-  height: calc(100vh - 80px);
-  padding: 0 40px 0 40px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  overflow-y: auto;
-  scroll-behavior: smooth;
-  margin-top: 80px;
-}
-
-#pageWrap h1 {
-  font-size: 9em;
-  text-align: center;
-  padding: 120px 0;
-  text-transform: uppercase;
-}
-
-#pageWrap #projects {
-  display: inline-block;
-  -webkit-column-count: 4;
-          column-count: 4;
-  -webkit-column-gap: 40px;
-          column-gap: 40px;
-}
-
-#pageWrap #projects img {
-  width: 100%;
-  padding-bottom: 40px;
-}
-
-#pageWrap p {
-  font-size: 4em;
-  line-height: 1.25;
-  padding-bottom: 120px;
-}
-
-footer {
-  width: 100%;
-  text-align: center;
-  font-size: 16px;
-  opacity: .4;
-  padding: 14px 0;
-}
-
-#preload {
-  position: fixed;
   height: 100vh;
   width: 100vw;
-  z-index: 101;
-  background: #141414;
-  -webkit-transition-duration: 2s;
-          transition-duration: 2s;
-  top: 0;
-  left: 0;
-  -webkit-transform-origin: top;
-          transform-origin: top;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -157,57 +125,57 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition-delay: .5s;
-          transition-delay: .5s;
-  -webkit-transition-timing-function: ease-in-out;
-          transition-timing-function: ease-in-out;
 }
 
-#preload p {
-  font-size: 2em;
-  -webkit-transition-duration: .75s;
-          transition-duration: .75s;
+#pageWrap #projects {
+  height: 170vh;
+  width: 170vw;
+  position: absolute;
+  -webkit-transition-duration: .6s;
+          transition-duration: .6s;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20% 20% 20% 20% 20%;
+      grid-template-columns: 20% 20% 20% 20% 20%;
+  -ms-grid-rows: 33% 33% 33%;
+      grid-template-rows: 33% 33% 33%;
 }
 
-@media screen and (max-width: 1200px) {
-  #pageWrap h1 {
-    font-size: 7em;
-  }
-  #pageWrap #projects {
-    -webkit-column-count: 3;
-            column-count: 3;
-  }
+#pageWrap #projects img {
+  height: 24vw;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition-duration: .5s;
+          transition-duration: .5s;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
 
-@media screen and (max-width: 900px) {
-  #pageWrap h1 {
-    font-size: 5em;
-  }
-  #pageWrap #projects {
-    -webkit-column-count: 2;
-            column-count: 2;
-  }
+#about {
+  margin: 60px 25px;
 }
 
-@media screen and (max-width: 650px) {
-  ::-webkit-scrollbar {
-    display: none;
-  }
-  #header .logo {
-    font-size: 26px;
-  }
-  #header ul {
-    width: 120px;
-  }
-  #header ul a {
-    font-size: 16px;
-  }
-  #pageWrap h1 {
-    font-size: 4.5em;
-  }
-  #pageWrap #projects {
-    -webkit-column-count: 1;
-            column-count: 1;
-  }
+#about #desc {
+  font-size: 6vw;
+  line-height: 1.15;
+  color: #333;
+}
+
+#about #desc a {
+  color: #333;
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
+  border-bottom: 4px solid white;
+}
+
+#about #desc a:hover {
+  border-bottom: 4px solid #333;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -33,11 +33,16 @@ function getY(event) //top position
 }
 
 var offset = 50;
-
+var halfWidth = window.innerWidth / 2;
+var halfHeight = window.innerHeight / 2;
 
 function cursor() {
-    _cursor.style.top = getY(event) - 10 + "px";
-	_cursor.style.left = getX(event) - 10 + "px";
+    var midX = (getX(event) - halfWidth) * -1;
+    var midY = (getY(event) - halfHeight) * -1;
+    _cursor.style.top = getY(event) - 20 + "px";
+	_cursor.style.left = getX(event) - 20 + "px";
     _cursorFollower.style.top = getY(event) - offset + "px";
     _cursorFollower.style.left = getX(event) - offset + "px";
+    $('#projects').css('transform', 'translateX(' + midX + 'px) translateY(' + midY + 'px)');
+    console.log(midX + ',' + midY);
 }

@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Joseph Yoon</title>
+    <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://use.typekit.net/tdd5rjb.css">
 </head>
 <body>
     <div id="header">
-        <a href="#home" class="logo">Joseph Yoon</a>
-        <ul>
+        <a href="index.html" class="logo">Joseph Yoon</a>
+        <div id="links">
             <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-        </ul>
+            <a href="#">Contact</a>
+        </div>
     </div>
     <div id="pageWrap">
-        <h1 id="home">Joseph Yoon</h1>
-        <div id="projects">
+        <div id="projects" draggable="true">
             <img id="0" src="" alt="">
             <img id="1" src="" alt="">
             <img id="2" src="" alt="">
@@ -43,14 +43,18 @@
                 var i = 0;
                 for (var i = 0; i <= 19; i++) {
                     document.getElementById(i).src = "img/" + i + ".jpg";
+                    //document.getElementById(i).style.transform = "translateX(" + (Math.random() * window.innerWidth - (window.innerWidth / 2)) + "px) translateY(" + (Math.random() * window.innerHeight - (window.innerHeight / 2)) + "px)";
                 }
             </script>
         </div>
-        <footer>© 2020 Joseph Yoon  —  Designed by <a href="https://jacobyoon.cf/" target="none">Jacob Yoon</a></footer>
     </div>
-    <div id="preload"><p id="p">Loading</p></div>
+    <div id="preload"><p id="p"></p></div>
     <div id="cursorFollower"></div>
-    <div id="cursor"></div>
+    <div id="cursor">
+        <div class="a"></div>
+        <div class="b"></div>
+        <span class=""></span>
+    </div>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="js/script.js"></script>
     <script language="javascript" type="text/javascript">
