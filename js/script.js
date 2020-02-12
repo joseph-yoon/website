@@ -6,7 +6,7 @@ document.addEventListener("mousemove", e => {
     if (window.innerWidth > 1000) {
         document.getElementById('cursor').style.top = e.pageY - 20 + "px";
         document.getElementById('cursor').style.left = e.pageX - 20 + "px";
-        var midX = (e.pageY - halfWidth) * -.8;
+        var midX = (e.pageX - halfWidth) * -.8;
         var midY = (e.pageY - halfHeight) * -.8;
         $('#projects').css('transform', 'translateX(' + midX + 'px) translateY(' + midY + 'px)');
     }
