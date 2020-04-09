@@ -95,6 +95,9 @@
         -ms-flex-pack: end;
             justify-content: flex-end;
   }
+  #header #links .contact {
+    margin-left: 30px;
+  }
   #header a {
     border-bottom: 2px solid rgba(0, 0, 0, 0);
     -webkit-transition-duration: .3s;
@@ -185,6 +188,7 @@
     line-height: 1.15;
     color: black;
     margin-bottom: 60px;
+    min-height: calc(100vh - 260px);
   }
   #about #desc a {
     color: black;

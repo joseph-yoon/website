@@ -147,6 +147,9 @@
         -ms-flex-pack: end;
             justify-content: flex-end;
   }
+  #header #links .contact {
+    margin-left: 30px;
+  }
   #header a {
     border-bottom: 2px solid rgba(0, 0, 0, 0);
     -webkit-transition-duration: .3s;
@@ -222,7 +225,7 @@
     font-size: 6vw;
     line-height: 1.15;
     color: black;
-    margin-bottom: -10vw;
+    min-height: calc(100vh - 150px - 140px);
   }
   #about #desc a {
     color: black;
@@ -234,6 +237,7 @@
     border-bottom: 4px solid #333;
   }
   #about #image {
+    margin-top: -11vw;
     height: 70vw;
     width: calc(100% - 200px);
     z-index: -1;
